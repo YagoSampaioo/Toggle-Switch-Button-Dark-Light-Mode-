@@ -1,0 +1,66 @@
+.uno {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+
+body {
+    transition: background-color 0.3s ease;
+}
+
+.dark-mode {
+    background-color: black;
+}
+
+.switch {
+    position: relative;
+    display: inline-block;
+    width: 60px;
+    height: 34px;
+}
+
+.switch input[type="checkbox"] {
+    opacity: 0;
+    width: 0;
+    height: 0;
+}
+
+.slider {
+    position: relative;
+    display: inline-block;
+    width: 120px;
+    height: 68px;
+    background-image: url(img/ceu-dia.png);
+}
+
+.slider:before {
+    content: "";
+    position: absolute;
+    top: 10px;
+    left: 10px;
+    width: 48px;
+    height: 48px;
+    background-image: url('img/sol.png');
+    /* Caminho para a imagem do sol */
+    background-size: cover;
+    transition: transform 0.3s ease;
+}
+
+.slider.round:before {
+    border-radius: 50%;
+}
+
+input:checked+.slider {
+    background-image: url(img/ceu-noite.jpg);
+}
+
+input:checked+.slider:before {
+    transform: translateX(52px);
+    background-image: url('img/lua.png');
+    /* Caminho para a imagem da lua */
+}
+
+.slider.round {
+    border-radius: 34px;
+}
